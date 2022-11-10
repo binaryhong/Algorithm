@@ -3,8 +3,7 @@ n = int(input())
 receipt = []
 for i in range(n):
     a, b = map(int,input().split())
-    sumValue = a * b
-    receipt.append(sumValue)
+    receipt.append(a*b)
 if sum(receipt) == total:
     print("Yes")
 else:
