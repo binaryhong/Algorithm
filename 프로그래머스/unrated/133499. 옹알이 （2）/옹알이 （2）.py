@@ -1,10 +1,28 @@
 def solution(babbling):
-    babble = ["", "aya", "ye", "woo", "ma"]
-    cnt = 0
-    for value in babbling:
-        for babbleValues in babble:
-            if babbleValues * 2 not in value:
-                value = value.replace(babbleValues, " ")
-        if value.strip() == "":
-            cnt += 1
-    return cnt
+
+    word = ["aya", "ye", "woo", "ma"]
+    result = 0
+
+    for i in babbling:
+
+        if len(i) < 2:
+            pass
+
+        else:
+            while True:
+                if i[:2] in word and i[:2] != i[2:4]:
+                    i = i[2:]
+
+                elif i[:3] in word and i[:3] != i[3:6]:
+                    i = i[3:]
+
+                elif i == '':
+                    result += 1
+                    break
+
+                else:
+                    break
+
+    answer = result
+
+    return answer
