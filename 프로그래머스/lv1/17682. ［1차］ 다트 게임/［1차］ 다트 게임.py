@@ -10,24 +10,22 @@ def solution(dartResult):
             if digitValue != "":
                 dartList.append(int(digitValue))
             digitValue = ""
+        # 10을 한 리스트에 넣기위한 코드. 1과 0 
         if dartResult[i] == "D":
             sumValue = dartList[-1]
-            # print("시작 dartList:", dartList)
-            # print("sumValue:", sumValue)
-            # print("D : dartList:", dartList)
             dartList[-1] = int(sumValue) * int(sumValue)
-            # print("D dartList:", dartList)
+        # D면 제곱.
         if dartResult[i] == "T":
             sumValue = dartList[-1]
             dartList[-1] = int(sumValue) * int(sumValue) * int(sumValue)
-            # print("dartList:", dartList)
+        # T면 세제곱.
         if dartResult[i] == "*":
             starCnt += 1
             for j in range(0, len(dartList)):
                 dartList[j] *= 2
         if dartResult[i] == "#":
             dartList[-1] *= -1
-            # print("dartList:", dartList)
+    # 문제조건 *이 마지막에 있으면 첫항은 *2 하지않음.
     if starCnt == 1:
         if dartResult[-1] == "*":
             dartList[0] //= 2
@@ -37,5 +35,4 @@ def solution(dartResult):
     if starCnt == 3:
         if dartResult[-1] == "*":
             dartList[0] //= 2
-    # print("final:", dartList)
     return sum(dartList)
