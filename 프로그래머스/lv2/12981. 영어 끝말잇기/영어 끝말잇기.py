@@ -1,6 +1,11 @@
 def solution(n, words):
+    answer = [0,0]
+    stack = [words[0]]
     for i in range(1, len(words)):
-        if words[i][0] != words[i-1][-1] or words[i] in words[:i] :
-            return [(i%n)+1, (i//n)+1]
-    else:
-        return [0,0]
+        if stack[-1][-1] == words[i][0] and words[i] not in stack:
+            stack.append(words[i])
+        else:
+            answer[0] = (i % n) + 1
+            answer[1] = i // n + 1
+            return answer
+    return answer
