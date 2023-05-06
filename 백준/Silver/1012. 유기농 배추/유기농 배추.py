@@ -12,7 +12,7 @@ def bfs(graph, a, b):
 
     while queue:
         x, y = queue.popleft()
-        for i in range(4):  # 4칸이라 4이지 않을까.
+        for i in range(4):  # dx, dy의 이동값 상하좌우라서 4
             nx = x + dx[i]
             ny = y + dy[i]
             if nx < 0 or nx >= n or ny < 0 or ny >= m:
