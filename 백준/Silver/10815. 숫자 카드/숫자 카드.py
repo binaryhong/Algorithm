@@ -1,15 +1,9 @@
-import sys
-
-n = int(sys.stdin.readline())
-a = list(map(int, sys.stdin.readline().split()))
-m = int(sys.stdin.readline())
-b = list(map(int, sys.stdin.readline().split()))
-_dict = {}  # 속도는 dictionary!
-for i in range(len(a)):
-    _dict[a[i]] = 0  # 아무 숫자로 mapping
-
-for j in range(m):
-    if b[j] not in _dict:
-        print("0", end=' ')
+N = int(input())
+a = set(map(int, input().split()))
+M = int(input())
+b = list(map(int, input().split()))
+for i in b:
+    if i in a:
+        print(1, end=" ")
     else:
-        print("1", end=' ')
+        print(0, end=" ")
