@@ -1,0 +1,5 @@
+N = int(input())
+result = list(map(int, input().split()))
+result = list(set(result))
+result.sort()
+print(' ' .join(map(str, result)))
